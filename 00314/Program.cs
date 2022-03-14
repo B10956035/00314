@@ -6,31 +6,28 @@ namespace B10956035
     {
         static void Main(string[] args)
         {
-            int num;
-            Console.WriteLine("輸入數字");
-            num = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= num; i++)
+            int[] num = { 1, 2, 3, 4, 5 };
+            string[] name = { "jack", "marry", "tom", "grace", "alice" };
+            int[] ascore = { 80, 65, 100, 98, 83 };
+            int[] bscore = { 75, 67, 93, 25, 82 };
+            int[] cscore = { 60, 62, 91, 50, 87 };
+            Console.WriteLine("輸入座號1-5:");
+            string input = Console.ReadLine();
+            int input_num = Int32.Parse(input);
+            int arrayIndex = Array.IndexOf(num, input_num);
+            if (arrayIndex > -1)
             {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine("");
+                Console.WriteLine("座號：" + num[arrayIndex]);
+                Console.WriteLine("姓名：" + name[arrayIndex]);
+                Console.WriteLine("電腦概論：" + ascore[arrayIndex]);
+                Console.WriteLine("程式設計：" + bscore[arrayIndex]);
+                Console.WriteLine("動畫設計：" + cscore[arrayIndex]);
             }
-            Console.WriteLine("");
-            for (int k = 1; k <= num; k++)
+            else
             {
-                Console.WriteLine("n*" + k);
+                Console.WriteLine("超出座號範圍");
             }
-            Console.WriteLine("");
-            for (int a = 1; a <= 9; a++)
-            {
-                for (int b = 1; b <= 9; b++)
-                {
-                    Console.Write(a + "*" + b + "=" + a * b + " ");
-                }
-                Console.WriteLine(" ");
-            }
+            Console.WriteLine();
         }
     }
 }
